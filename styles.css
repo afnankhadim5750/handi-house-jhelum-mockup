@@ -1,0 +1,340 @@
+/* Handi House Restaurant Jhelum — asymmetric photo collage
+   ink navy #1E2A38 · warm cream #F7F2E8 · muted brass #A8842F · sage #7A8B6F
+   Instrument Serif (display) + Inter Tight (body) */
+:root{
+  --navy:#1E2A38; --navy-deep:#16202C; --navy-soft:#2A3A4C;
+  --cream:#F7F2E8; --cream-2:#EFE7D6; --cream-3:#FBF8F0;
+  --brass:#A8842F; --brass-deep:#8A6D24;
+  --sage:#7A8B6F; --sage-soft:#E4E8DE;
+  --ink:#22303E; --muted:#5A6673; --line:#D8CFBB;
+  --radius:14px;
+  --shadow:0 18px 40px rgba(22,32,44,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:var(--cream); color:var(--ink);
+  font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.container{max-width:1240px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1.08;color:var(--navy)}
+h2{font-size:clamp(2rem,4.4vw,3.4rem);letter-spacing:-.01em}
+h3{font-size:1.5rem}
+p{margin-bottom:1rem}
+.eyebrow{
+  font-family:"Inter Tight",sans-serif;font-size:.78rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;
+}
+.eyebrow-brass{color:var(--brass)}
+.section{padding:96px 0}
+.section-head{max-width:720px;margin-bottom:48px}
+.section-intro{font-size:1.12rem;color:var(--muted)}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-block;padding:14px 26px;border-radius:999px;
+  font-weight:700;font-size:.98rem;text-decoration:none;text-align:center;
+  border:2px solid transparent;cursor:pointer;transition:transform .15s ease, background .15s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-navy{background:var(--navy);color:var(--cream-3)}
+.btn-navy:hover{background:var(--navy-deep)}
+.btn-brass{background:var(--brass);color:#fff}
+.btn-brass:hover{background:var(--brass-deep)}
+.btn-cream{background:var(--cream);color:var(--navy)}
+.btn-outline{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn-outline:hover{background:var(--navy);color:var(--cream-3)}
+
+/* ---------- header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:60;background:var(--cream-3);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;gap:28px;min-height:72px}
+.wordmark{text-decoration:none;line-height:1.05;flex-shrink:0}
+.wordmark-name{font-family:"Instrument Serif",serif;font-size:1.7rem;color:var(--navy);display:block}
+.wordmark-sub{font-size:.68rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+.main-nav{display:flex;gap:26px;margin-left:auto}
+.main-nav a{
+  text-decoration:none;font-weight:600;font-size:.95rem;color:var(--navy);
+  padding:6px 2px;border-bottom:2px solid transparent;
+}
+.main-nav a:hover,.main-nav a.active{border-bottom-color:var(--brass);color:var(--brass-deep)}
+.header-actions{display:flex;align-items:center;gap:14px}
+.header-actions .btn{padding:10px 20px;font-size:.9rem}
+.menu-toggle{
+  display:none;background:none;border:2px solid var(--navy);border-radius:10px;
+  width:46px;height:42px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+}
+.menu-toggle span{display:block;width:22px;height:2px;background:var(--navy)}
+.mobile-menu{display:none}
+.mobile-menu[hidden]{display:none}
+
+/* ---------- hero : headline column overlapping a photo collage ---------- */
+.hero{padding:72px 0 84px;background:var(--cream);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:0;align-items:start}
+.hero-copy{padding:34px 44px 0 0;position:relative;z-index:3}
+.hero-copy h1{font-size:clamp(3rem,6.2vw,5.2rem);margin-bottom:22px}
+.hero-copy h1 em{font-style:italic;color:var(--brass-deep)}
+.standfirst{font-size:1.18rem;color:#3E4A57;max-width:520px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin:26px 0 20px}
+.hero-rating{font-size:.98rem;color:var(--muted)}
+.hero-rating .stars{color:var(--brass);letter-spacing:.1em;font-size:1.05rem}
+.hero-collage{position:relative;min-height:640px}
+.collage-main{
+  position:absolute;top:0;right:0;width:72%;border:10px solid var(--cream-3);
+  box-shadow:var(--shadow);transform:rotate(1.2deg);background:var(--cream-3);
+}
+.collage-main img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.collage-main figcaption{
+  position:absolute;top:12px;left:12px;background:rgba(251,248,240,.94);
+  border-radius:8px;padding:6px 12px;
+}
+.collage-small{
+  position:absolute;left:-14px;bottom:118px;width:52%;border:8px solid var(--cream-3);
+  box-shadow:var(--shadow);transform:rotate(-2.4deg);background:var(--cream-3);z-index:2;
+}
+.collage-small img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.collage-tall{
+  position:absolute;right:26px;bottom:0;width:34%;border:8px solid var(--cream-3);
+  box-shadow:var(--shadow);transform:rotate(1.6deg);background:var(--cream-3);z-index:2;
+}
+.collage-tall img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.collage-small figcaption,.collage-tall figcaption,
+.handi-photo figcaption,.family-big figcaption,.family-tile figcaption,.drinks-photos figcaption{
+  font-size:.82rem;font-weight:600;color:var(--muted);padding:8px 10px 10px;background:var(--cream-3);
+}
+.collage-note{
+  position:absolute;left:-8px;bottom:6px;max-width:250px;z-index:3;
+  font-family:"Instrument Serif",serif;font-style:italic;font-size:1.25rem;line-height:1.3;color:var(--navy);
+  border-left:3px solid var(--brass);padding-left:14px;margin:0;
+}
+
+/* ---------- trust bar ---------- */
+.trustbar{background:var(--navy);color:var(--cream)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:30px 24px}
+.trust-item{display:flex;flex-direction:column;gap:2px}
+.trust-num{font-family:"Instrument Serif",serif;font-size:1.9rem;color:var(--cream)}
+.trust-label{font-size:.85rem;color:#B9C2CB;letter-spacing:.04em}
+
+/* ---------- the handi ---------- */
+.handi-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start}
+.handi-text p{color:#3E4A57}
+.handi-text h2{margin-bottom:20px}
+.house-notes{display:grid;gap:0;margin-top:34px;border-top:2px solid var(--navy)}
+.house-note{display:grid;grid-template-columns:44px 1fr;gap:6px 16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.house-note .note-num{
+  font-family:"Instrument Serif",serif;font-size:1.6rem;color:var(--brass);
+  grid-row:span 2;line-height:1;
+}
+.house-note h3{font-size:1.3rem}
+.house-note p{margin:0;color:var(--muted);font-size:.98rem}
+.handi-photo{position:sticky;top:96px}
+.handi-photo img{border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:4/5;object-fit:cover;width:100%}
+.handi-photo figcaption{border-radius:0 0 var(--radius) var(--radius);margin-top:-6px;position:relative}
+
+/* ---------- kitchen / menu board ---------- */
+.kitchen{background:var(--cream-3)}
+.menu-board{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.menu-chapter{
+  background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;
+}
+.menu-chapter img{aspect-ratio:16/10;object-fit:cover;width:100%}
+.menu-chapter h3{font-size:1.9rem;padding:22px 26px 6px}
+.menu-chapter ul{list-style:none;padding:6px 26px 26px}
+.menu-chapter li{padding:13px 0;border-bottom:1px dashed var(--line)}
+.menu-chapter li:last-child{border-bottom:0}
+.menu-chapter li strong{display:block;font-size:1.02rem;color:var(--navy)}
+.menu-chapter li span{font-size:.92rem;color:var(--muted)}
+.menu-note{text-align:center;margin-top:30px;color:var(--muted)}
+.menu-note a{color:var(--brass-deep);font-weight:700}
+
+/* ---------- feature band ---------- */
+.feature-band{background:var(--navy);color:var(--cream);padding:96px 0}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.feature-photo img{border-radius:var(--radius);aspect-ratio:1/1;object-fit:cover;width:100%;border:1px solid var(--navy-soft)}
+.feature-text h2{color:var(--cream);margin-bottom:18px}
+.feature-text p{color:#C6CFD8}
+.feature-steps{list-style:none;margin-top:28px;display:grid;gap:18px}
+.feature-steps li{
+  border-left:3px solid var(--brass);padding-left:18px;color:#C6CFD8;font-size:1rem;
+}
+.feature-steps strong{color:var(--cream);display:block;font-size:1.05rem;margin-bottom:2px}
+
+/* ---------- breads & rice ---------- */
+.breads-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.bread-card{background:var(--cream-3);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.bread-card img{aspect-ratio:16/11;object-fit:cover;width:100%}
+.bread-card h3{padding:20px 24px 4px;font-size:1.7rem}
+.bread-card p{padding:0 24px 24px;color:var(--muted);margin:0}
+
+/* ---------- family nights ---------- */
+.family{background:var(--cream-2)}
+.family-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:24px}
+.family-big{grid-row:span 2}
+.family-big img,.family-tile img{width:100%;object-fit:cover;border-radius:var(--radius)}
+.family-big img{aspect-ratio:4/3.4;height:100%}
+.family-tile img{aspect-ratio:16/10}
+.family-big figcaption,.family-tile figcaption{border-radius:0 0 var(--radius) var(--radius);margin-top:-6px;position:relative}
+.family-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px;border-top:2px solid var(--navy);padding-top:32px}
+.family-point h3{font-size:1.35rem;margin-bottom:6px}
+.family-point p{color:var(--muted);margin:0;font-size:.98rem}
+
+/* ---------- drinks ---------- */
+.drinks-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}
+.drinks-list{list-style:none;margin-top:28px;border-top:2px solid var(--navy)}
+.drinks-list li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.drinks-list strong{font-size:1.05rem;color:var(--navy)}
+.drinks-list span{color:var(--muted);font-size:.95rem;text-align:right}
+.drinks-photos{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.drinks-photos figure:first-child{margin-top:44px}
+.drinks-photos img{border-radius:var(--radius);aspect-ratio:3/4;object-fit:cover;width:100%}
+.drinks-photos figcaption{border-radius:0 0 var(--radius) var(--radius);margin-top:-6px;position:relative}
+
+/* ---------- why locals choose ---------- */
+.why{background:var(--sage-soft)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.why-card{background:var(--cream-3);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px}
+.why-num{font-family:"Instrument Serif",serif;font-size:1.5rem;color:var(--brass);display:block;margin-bottom:10px}
+.why-card h3{font-size:1.35rem;margin-bottom:8px}
+.why-card p{color:var(--muted);margin:0;font-size:.97rem}
+
+/* ---------- gallery ---------- */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gallery-item{
+  border:0;padding:0;background:none;cursor:pointer;border-radius:var(--radius);overflow:hidden;
+  position:relative;
+}
+.gallery-item img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .3s ease}
+.gallery-item:hover img,.gallery-item:focus-visible img{transform:scale(1.04)}
+
+/* ---------- faq ---------- */
+.faq{background:var(--cream-3)}
+.faq-narrow{max-width:820px}
+.faq h2{margin-bottom:32px}
+.accordion{border-top:2px solid var(--navy)}
+.acc-item{border-bottom:1px solid var(--line)}
+.acc-btn{
+  width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;
+  background:none;border:0;padding:22px 4px;cursor:pointer;text-align:left;
+  font-family:"Instrument Serif",serif;font-size:1.45rem;color:var(--navy);
+}
+.acc-icon{font-size:1.6rem;color:var(--brass);flex-shrink:0;line-height:1}
+.acc-panel{padding:0 4px 22px;color:var(--muted);max-width:680px}
+.acc-panel a{color:var(--brass-deep);font-weight:700}
+
+/* ---------- visit ---------- */
+.visit-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.visit-address{font-style:normal;font-size:1.15rem;line-height:1.6;color:var(--navy);margin:18px 0 8px}
+.visit-phone a{font-family:"Instrument Serif",serif;font-size:1.9rem;color:var(--brass-deep);text-decoration:none}
+.visit-note{color:var(--muted)}
+.visit-cta{display:flex;flex-wrap:wrap;gap:14px;margin:22px 0 34px}
+.visit-form{background:var(--cream-3);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.visit-form h3{font-size:1.6rem;margin-bottom:18px}
+.visit-form label{display:block;font-weight:600;font-size:.92rem;margin-bottom:14px}
+.visit-form input{
+  display:block;width:100%;margin-top:6px;padding:12px 14px;border:1.5px solid var(--line);
+  border-radius:10px;font:inherit;background:#fff;color:var(--ink);
+}
+.visit-form input:focus{border-color:var(--brass);outline:none}
+.visit-form .btn{width:100%;margin-top:6px}
+.form-note{font-size:.85rem;color:var(--muted);margin:10px 0 0;text-align:center}
+.visit-map iframe{
+  width:100%;height:560px;border:0;border-radius:var(--radius);box-shadow:var(--shadow);
+  filter:saturate(.85);
+}
+
+/* ---------- final cta ---------- */
+.final-cta{background:var(--navy);color:var(--cream);text-align:center;padding:84px 0}
+.final-cta h2{color:var(--cream);margin-bottom:10px}
+.final-cta p{color:#C6CFD8;margin-bottom:26px}
+
+/* ---------- footer ---------- */
+.site-footer{background:var(--navy-deep);color:#AEB8C2;padding:56px 0 40px}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px}
+.footer-name{font-family:"Instrument Serif",serif;font-size:1.8rem;color:var(--cream)}
+.footer-brand p{margin-bottom:6px;font-size:.95rem}
+.footer-brand a{color:var(--cream)}
+.footer-nav{display:flex;flex-wrap:wrap;gap:8px 22px;align-content:start}
+.footer-nav a{color:#C6CFD8;text-decoration:none;font-weight:600;font-size:.95rem}
+.footer-nav a:hover{color:var(--cream)}
+.footer-disclaimer{grid-column:1/-1;border-top:1px solid #2A3A4C;padding-top:20px;font-size:.88rem;color:#8B98A5}
+
+/* ---------- lightbox ---------- */
+.lightbox{
+  position:fixed;inset:0;z-index:100;background:rgba(22,32,44,.92);
+  display:flex;align-items:center;justify-content:center;padding:24px;
+}
+.lightbox[hidden]{display:none}
+.lightbox figure{max-width:900px;width:100%}
+.lightbox img{width:100%;max-height:78vh;object-fit:contain;border-radius:8px}
+.lightbox figcaption{color:var(--cream);text-align:center;padding-top:14px;font-size:1rem}
+.lightbox-close{
+  position:absolute;top:18px;right:22px;background:none;border:0;color:var(--cream);
+  font-size:3rem;line-height:1;cursor:pointer;
+}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .gallery-item img{transition:none}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1020px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .hero-copy{padding-right:0}
+  .hero-collage{min-height:560px}
+  .handi-grid,.feature-grid,.drinks-grid,.visit-grid{grid-template-columns:1fr;gap:44px}
+  .handi-photo{position:static}
+  .menu-board,.breads-grid{grid-template-columns:1fr 1fr}
+  .menu-chapter:last-child{grid-column:1/-1}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .family-grid{grid-template-columns:1fr}
+  .family-big{grid-row:auto}
+  .family-big img{aspect-ratio:16/10}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .section{padding:64px 0}
+  .main-nav,.header-actions .btn{display:none}
+  .menu-toggle{display:flex}
+  .mobile-menu{
+    display:block;position:absolute;top:100%;left:0;right:0;z-index:70;
+    background:var(--cream-3);border-bottom:1px solid var(--line);
+    padding:10px 24px 20px;box-shadow:0 20px 30px rgba(22,32,44,.14);
+  }
+  .mobile-menu a{
+    display:block;padding:14px 0;border-bottom:1px solid var(--line);
+    text-decoration:none;font-weight:700;font-size:1.1rem;color:var(--navy);
+  }
+  .mobile-menu a.mobile-call{color:var(--brass-deep);border-bottom:0}
+  .hero{padding:44px 0 60px}
+  .hero-collage{min-height:480px}
+  .collage-main{width:78%}
+  .collage-small{left:0;bottom:96px;width:56%}
+  .collage-tall{right:8px;width:38%}
+  .collage-note{left:0;bottom:2px;max-width:56%;z-index:5}
+  .menu-board,.breads-grid,.why-grid,.gallery-grid{grid-template-columns:1fr}
+  .family-strip{grid-template-columns:1fr;gap:24px}
+  .drinks-photos{grid-template-columns:1fr}
+  .drinks-photos figure:first-child{margin-top:0}
+  .trust-grid{grid-template-columns:1fr 1fr;gap:18px}
+  .visit-map iframe{height:380px}
+  .visit-form{padding:22px}
+}
+@media (max-width:420px){
+  .hero-collage{min-height:420px}
+  .trust-num{font-size:1.5rem}
+  .hero-copy h1{font-size:2.9rem}
+}
