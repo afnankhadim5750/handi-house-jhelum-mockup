@@ -1,0 +1,143 @@
+{
+ "archetype": "Asymmetric photo collage \u2014 headline column overlapping a 3-photo collage (karahi wok / copper handi / night flames), rotated cream-framed tiles, italic note",
+ "business": "Handi House Restaurant Jhelum",
+ "colour": "Ink navy #1E2A38 base + deep navy #16202C bands + warm cream #F7F2E8 + muted brass #A8842F + sage #7A8B6F. No orange UI accents.",
+ "deploy_permalink": "https://6b015906fdced88e14b04d66--handi-house-jhelum-mockup.netlify.app",
+ "flags": [
+  "Netlify injects its floating 'Powered by Netlify' HUD badge on the free tier \u2014 lane-wide artifact, visible in screenshots, not a defect.",
+  "Google Maps iframe in the Visit section could not be visually verified live (offline headless render shows a blank frame; the embed URL is the standard google.com/maps?q=...&output=embed pattern). Map presence on the live page was not screenshot-confirmed.",
+  "No verbatim Handi House reviews could be retrieved from public listings, so the site uses a 'Why locals choose' themes section instead of quotes (see research.json)."
+ ],
+ "fonts": "Instrument Serif (display) + Inter Tight (body) via Google Fonts \u2014 grep of design-log.json: 0 hits for both",
+ "github_commit": "9d16386a0fb8ff82478cd71132ac8465be91b425",
+ "github_repo": "https://github.com/afnankhadim5750/handi-house-jhelum-mockup",
+ "hero": "Headline column overlapping a 3-photo collage: large karahi wok photo, copper-handi tile, night-flames tall tile, with caption chip and italic note",
+ "image_count": 22,
+ "image_ids": [
+  25884475,
+  2474661,
+  30080895,
+  37180958,
+  29684987,
+  37309226,
+  40262819,
+  32830296,
+  40535515,
+  32558917,
+  34159107,
+  41087881,
+  38464138,
+  9792458,
+  33104714,
+  12122984,
+  30396941,
+  33947401,
+  9646859,
+  20371525,
+  11091404,
+  10508207
+ ],
+ "live_url": "https://handi-house-jhelum-mockup.netlify.app",
+ "nav": [
+  "The Handi",
+  "The Kitchen",
+  "Breads & Rice",
+  "Family Nights",
+  "Gallery",
+  "Visit"
+ ],
+ "section_order": [
+  "hero (asymmetric collage)",
+  "trust bar",
+  "The Handi (about + house notes)",
+  "The Kitchen (3-chapter menu board)",
+  "feature band (spice box, dark navy)",
+  "Breads & Rice",
+  "Family Nights (grill spread)",
+  "To Finish (chai)",
+  "Why Locals Choose",
+  "Gallery (lightbox)",
+  "FAQ",
+  "Visit (address/phone/WhatsApp/form/map)",
+  "final CTA",
+  "footer"
+ ],
+ "signature_elements": [
+  "Asymmetric hero collage with rotated cream-framed tiles overlapping the headline column",
+  "Three-chapter menu board (Handis / Karahi & Curries / From the Grill)",
+  "Dark navy spice feature band with copper-pan photo and 3-step strip",
+  "Family-nights grill spread with large tikka-skewers photo",
+  "Lightbox gallery (6 photos)",
+  "Numbered house-notes list (I/II/III) with brass numerals"
+ ],
+ "site_id": "1a345319-ca83-4f69-89f2-cb70a7fa5228",
+ "slug": "handi-house-jhelum-mockup",
+ "summary_5_lines": {
+  "business": "Handi House Restaurant Jhelum \u2014 a desi handi/karahi restaurant on GT Road, Jada, Jhelum 49600; 4.1 stars from 800+ Google reviews; phone +92 313 544 4333.",
+  "design_direction": "Asymmetric photo collage in ink navy, warm cream, muted brass and sage, with Instrument Serif display type and Inter Tight body \u2014 a headline column overlapping a three-photo collage of karahi, copper handi and night flames.",
+  "signature_elements": "Rotated cream-framed collage tiles, a three-chapter menu board, a dark navy spice feature band, a family-nights grill spread, and a lightbox gallery.",
+  "what_could_not_be_verified": "Opening hours, official menu and prices, signature dishes, takeaway/delivery, family seating and parking \u2014 none published in sources found; no verbatim reviews retrievable, so no quotes are used.",
+  "why_chosen": "RESERVE build: the primary, Royal Courtyard Cafe&Restaurant, was rejected because trek.pk lists an own-domain website (royalcourtyard.pk) for it. Handi House has no website button on trek.pk and no own website in search results."
+ },
+ "swap": {
+  "evidence": [
+   "trek.pk Jhelum restaurants page (fetched 2026-11-21 08:16 UTC): Royal Courtyard entry shows Call, WhatsApp, Website (royalcourtyard.pk), Map; 4.5 stars (585 reviews); +92 336 644 4786",
+   "royalcourtyard.pk DNS resolves (198.18.121.35 via VM resolver) but HTTPS returns an empty reply from this VM and browser.open reports it unresolvable as a public page \u2014 the site itself could not be loaded, but the own-domain listing is the disqualifier under the task rule",
+   "Web search for royalcourtyard.pk returned no live site in results, but the trek.pk Website button is sufficient evidence of an own domain",
+   "Reserve check: trek.pk Handi House entry shows only Call, WhatsApp, Map \u2014 NO Website button; web search 'Handi House Jhelum restaurant GT Road website' returned no own website, only directory listings"
+  ],
+  "primary_business": "Royal Courtyard Cafe&Restaurant, GT Road, Kala Gujran, Jhelum 49600",
+  "primary_rejected": true,
+  "reason": "trek.pk lists a 'Website' button for Royal Courtyard Cafe&Restaurant linking to royalcourtyard.pk \u2014 an own domain named after the business. Per the task rule, a business with its own domain must not be built.",
+  "reserve_business": "Handi House Restaurant Jhelum"
+ },
+ "verification": {
+  "curl_deploy_permalink": "200, 27135 bytes (https://6b015906fdced88e14b04d66--handi-house-jhelum-mockup.netlify.app/index.html)",
+  "curl_main_js": "200, 4999 bytes",
+  "curl_main_url": "200, 27135 bytes (https://handi-house-jhelum-mockup.netlify.app/index.html)",
+  "curl_styles": "200, 16869 bytes (matches local file exactly)",
+  "design_dna_404_live": true,
+  "fixes_after_first_screenshot": [
+   "Hero main-photo caption was half-hidden behind the small collage tile on desktop \u2014 fixed by moving the caption to a chip overlay at the top of the main photo; verified in the final Microlink desktop shot.",
+   "Mobile collage note ('On GT Road, Jada \u2014 the stop travellers plan their drive around') was clipped behind the main tile \u2014 fixed by pinning it to the bottom-left of the collage (max-width 56%, z-index 5); verified in the final local mobile render and the live mobile Microlink shot."
+  ],
+  "fonts_grep": "Instrument Serif 0 hits, Inter Tight 0 hits in design-log.json (51 entries)",
+  "images_viewed": "28 Pexels candidates downloaded; 3 labelled contact sheets built with PIL and viewed with the read tool; 22 used, 6 rejected (2 near-duplicates, 4 dropped for count/balance \u2014 see research.json image_rejections_viewed)",
+  "mobile_menu": "PASS \u2014 verify-mobile-menu.py handi-house-jhelum-mockup \u2192 MENU_TEST_PASS (re-run after collision fix, before redeploy)",
+  "noindex_present": true,
+  "prices_on_request_count": 1,
+  "research_json_404_live": true,
+  "screenshots_viewed": {
+   "desktop_1440_live_microlink": "Viewed \u2014 final deploy (v=3 cache-buster): hero, header, collage, rating, CTAs all correct; caption chip fully visible",
+   "desktop_full_page_local_headless": "Viewed in 3 slices at 1440px \u2014 trust bar, about, menu board, feature band, breads, family nights, drinks, why-choose, gallery, FAQ, visit form, final CTA, footer all render correctly; page ~10,500px tall",
+   "mobile_390_live_microlink": "Viewed \u2014 final deploy (v=3): hero, header, hamburger, CTAs clean; no overflow",
+   "mobile_full_page_local_headless": "Viewed in slices at 390px \u2014 hero (after fix), trust bar, about, menu board, family, gallery, FAQ, visit form, final CTA, footer all render correctly; no horizontal overflow; page ~18,100px tall"
+  },
+  "collision_fix_live": "All 14 new images 200 on live site; 3 sampled old images 404; research.json 404; design-dna.json 404 (new deploy 6b015906fdced88e14b04d66)",
+  "screenshots_viewed_collision_fix": "Microlink live (v=4 cache-buster): desktop 1440 \u2014 new hero karahi + night-flames tile render, caption chip fully visible; mobile 390 \u2014 hero/CTAs/hamburger clean. Local headless 390px render: mobile collage note 'On GT Road, Jada \u2014 the stop travellers plan their drive around.' fully visible bottom-left, not clipped (prior fix intact)."
+ },
+ "collision_fix": {
+  "date": "2026-11-21",
+  "cause": "Original builder checked collisions by comparing bare integer IDs against 'pexels:'-prefixed design-log strings, so 14 reused IDs were missed. Fixed with a stem-normalised check: stem(i) = strip 'pexels:' prefix and non-digits, so 'pexels:28674556', '28674556' and 'photo-28674556-...' all become 'pexels:28674556'.",
+  "verification": "Every replacement ID stem-checked against (a) design-log.json all 51 entries / 1073 IDs, (b) Site A Spice Orchid 22 IDs, (c) Site B Platter House current 25 IDs, (d) the 8 kept IDs \u2014 0 hits in all four sets. Final 22 IDs re-checked the same way: 0 external collisions (the 8 keeps match only themselves).",
+  "mapping": {
+   "39378356 -> 25884475": "hero main \u2014 chicken karahi in wok",
+   "33617984 -> 30080895": "hero collage tall \u2014 chefs cooking karahi over open flames at night",
+   "37180955 -> 37180958": "about \u2014 karahi in black wok",
+   "29684985 -> 29684987": "menu chapter Handis \u2014 chicken curry in kadai",
+   "30203312 -> 37309226": "menu chapter Karahi & Curries \u2014 spicy lamb curry",
+   "30203316 -> 32830296": "feature band \u2014 curry in copper pan with spice bowls",
+   "38834855 -> 40535515": "breads card From the Tawa \u2014 parathas on tawa",
+   "34938525 -> 32558917": "breads card From the Tandoor \u2014 flatbreads on tandoor wall",
+   "5410401 -> 34159107": "breads card rice \u2014 biryani in large pan",
+   "20270270 -> 33104714": "drinks \u2014 masala chai in clay cups",
+   "34324342 -> 12122984": "drinks \u2014 chai poured into glasses",
+   "28674556 -> 30396941": "gallery \u2014 wicker basket of naan/roti",
+   "7394819 -> 33947401": "gallery \u2014 biryani in clay pot",
+   "11413997 -> 11091404": "gallery \u2014 friends raising clay cups of chai"
+  },
+  "viewing": "24 Pexels candidates downloaded; 3 labelled PIL contact sheets viewed; 14 used. Rejected after viewing: 25884472 (same pan as 25884475 but with a branded Olper's box in frame), 34159106 (same clay-pot photoshoot series as rice-card 34159107 \u2014 near-duplicate look), 36704398/37901430/31002370/37454113/12427834 (acceptable alternates, dropped for count/balance). 30396941-1600.webp needed WebP q35 to stay under 250KB (247,380 bytes); viewed after conversion \u2014 still clean.",
+  "files": "All 14 old files removed; 14 new pairs written as WebP 1600px + 800px, every file under 250KB; 44 files total, 22 photos.",
+  "alt_caption_updates": "Alt text / figcaptions / gallery data-captions updated ONLY where the new photo differs from the old description (hero tall, menu kadai, menu lamb bowl, feature band spice box, rice clay pot, both drinks photos, gallery basket, gallery biryani caption). No design, copy, font or layout change."
+ }
+}
