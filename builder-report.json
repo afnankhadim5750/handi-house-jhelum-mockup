@@ -9,7 +9,7 @@
   "No verbatim Handi House reviews could be retrieved from public listings, so the site uses a 'Why locals choose' themes section instead of quotes (see research.json)."
  ],
  "fonts": "Instrument Serif (display) + Inter Tight (body) via Google Fonts \u2014 grep of design-log.json: 0 hits for both",
- "github_commit": "9d16386a0fb8ff82478cd71132ac8465be91b425",
+ "github_commit": "9035a77",
  "github_repo": "https://github.com/afnankhadim5750/handi-house-jhelum-mockup",
  "hero": "Headline column overlapping a 3-photo collage: large karahi wok photo, copper-handi tile, night-flames tall tile, with caption chip and italic note",
  "image_count": 22,
